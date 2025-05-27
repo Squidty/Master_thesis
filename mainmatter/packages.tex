@@ -1,0 +1,22 @@
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[ngerman]{datetime}
+
+
+
+%%%%%
+% define refernece above "=" sign:
+\newcounter{relctr} %% <- counter for relations
+\everydisplay\expandafter{\the\everydisplay\setcounter{relctr}{0}} %% <- reset every eq
+
+\newcommand\oben[1]{%
+    \refstepcounter{relctr}%
+    \stackrel{\textnormal{(\alph{relctr})}}{\mathstrut{#1}}%
+}
+\AtBeginDocument{\let\originallabel\label}%% <- store original definition
+%%%%%
+
+% define \Ima for image
+\DeclareMathOperator{\Ima}{Im}
