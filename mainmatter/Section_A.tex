@@ -1,41 +1,72 @@
 \section{Section 1}
 
-\subsection{Subsection A}
 
-basdkasdbashd
-
-
-\subsection{Subsection B}
-
-\begin{theorem}
-Das ist ein Theorem.
-\end{theorem}
-
-\begin{lemma}
-Das ist ein Lemma
-\end{lemma}
-
-\begin{corollary}
-Das ist ein Korollar.
-\end{corollary}
-
-\begin{remark}
-Das ist eine Bemerkung.
-\end{remark}
+\subsection{Some Definitions}
 
 
-\begin{definition}[Test]
-Das ist eine Definition.
+\begin{question}
+    Definieren hier die f-Divergenz allgemein für positive lineare Funktionale
+    über von Neumann Algebren.
+    Haben wir dadurch später Vorteile, oder willst du das einfach erstmal
+    so allgemein wie möglich machen?
+    Für die Physik und viele Resultate werden wir schätze ich mal Zustände
+    verwenden.
+\end{question}
+
+
+
+\begin{definition}
+Let $\varphi, \psi:\mathcal{M}\rightarrow\mathbb{C}$ be positive lineare functionals over a von
+Neumann algebra $\mathcal{M}$ such that
+\gext{$\varphi \ll \gg \psi$ was das nochmal genau???}
+and $f:(0,\infty)\rightarrow \mathbb{R}$ be a convex function with
+$f(1) = 0$ \gext{(brauche ich das hier???)}.
+The \textit{f-divergence} of $\varphi$ and $\psi$ is given by
+\begin{equation}
+\begin{split}
+    D_f(\varphi\mid \psi) &= \int_{1}^{\infty}
+    f''(\gamma) E_\gamma(\varphi\mid \psi)
+    + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi\mid\varphi) d\gamma\\
+    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi)
+    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\gamma) d\gamma.
+\end{split}
+\end{equation}
+
 \end{definition}
 
-\begin{proof}
-Das ist ein Beweis.
-\end{proof}
 
-\begin{example}
-Das ist ein Beispiel.
-\end{example}
 
-Hier wird zitiert \cite{summers}.
-Auch \cite{koot} ist ein wichtiges Paper.
 
+\subsection{First Inequalitie}
+
+In \cite{Sason_2016} there are a lot of inequalities for f-divergences in the
+context of probability measures.
+
+We want to generalize them for states over arbitrary von Neumann algebras
+(even type vNA of type III).
+
+
+
+
+We start with inequalitie (84) from \cite{Sason_2016}.
+
+\begin{proposition}
+    Let $f,g: (0,\infty)\rightarrow\mathbb{R}$ convex functions
+    with $f(1) = g(1)$, $f'(1) = g'(1)$
+    and $f(t)\leq g(t)$ for all $t\in(0,\infty)$.
+    Then, the following inequalitie holds:
+    \begin{equation}
+        D_f(\varphi\mid \psi) \leq D_g(\varphi\mid\psi).
+    \end{equation}
+    $\varphi$ and $\psi$ are states over an arbitrary von Neumann algebra.
+\end{proposition}
+
+\begin{remark}
+    Alexandrovs theorem states that every convex function defined on an
+    open domain is twice differentiable almost everywhere.
+\end{remark}
+
+\begin{remark}
+    By assumption $f'(1) = g'(1)$ indirectly require, that $f$ and $g$ are
+    differentiable at $x=1$.
+\end{remark}
