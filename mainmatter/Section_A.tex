@@ -18,7 +18,7 @@
 \begin{definition}
 Let $\varphi, \psi:\mathcal{M}\rightarrow\mathbb{C}$ be positive lineare functionals over a von
 Neumann algebra $\mathcal{M}$ such that
-\gext{$\varphi \ll \gg \psi$ was das nochmal genau???}
+$\varphi \ll \gg \psi$ \gext{was das nochmal genau???}
 and $f:(0,\infty)\rightarrow \mathbb{R}$ be a convex function with
 $f(1) = 0$ \gext{(brauche ich das hier???)}.
 The \textit{f-divergence} of $\varphi$ and $\psi$ is given by
@@ -28,12 +28,34 @@ The \textit{f-divergence} of $\varphi$ and $\psi$ is given by
     f''(\gamma) E_\gamma(\varphi\mid \psi)
     + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi\mid\varphi) d\gamma\\
     &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi)
-    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\gamma) d\gamma.
+    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\varphi) d\gamma.
 \end{split}
 \end{equation}
-
 \end{definition}
 
+\begin{definition}
+    Let $\varphi$ and $\psi$ be as above. (sicher? oder doch Zustände?)
+    The hockeystick divergence $E_\gamma(\varphi\mid\psi)$ is defined as
+    follows:
+    \begin{equation}
+        E_\gamma(\varphi\mid\psi) := (\psi - \gamma\varphi)_+(\mathbb{1})
+    \end{equation}
+\end{definition}
+
+Some facts about the hockeystick divergence.
+
+\begin{proposition}
+    Let $\varphi_1, \varphi_2$ be positive lineare functionals over a von Neumann
+    algebra, and $p_1, p_2$ are 
+    \gext{(pos. lin. functionals or states?)}
+    \begin{equation}
+        \lim_{t\rightarrow\infty} E_t(\varphi_1\mid \varphi_2) = \varphi_1(p_2^\perp).
+    \end{equation}
+    \begin{equation}
+        \lim_{t\rightarrow\infty} E_t(\varphi_1, \varphi_2) = 0\quad
+        \Longleftrightarrow\quad p_1\leq p_2.
+    \end{equation}
+\end{proposition}
 
 
 
@@ -43,7 +65,7 @@ In \cite{Sason_2016} there are a lot of inequalities for f-divergences in the
 context of probability measures.
 
 We want to generalize them for states over arbitrary von Neumann algebras
-(even type vNA of type III).
+(even vNA of type III).
 
 
 
