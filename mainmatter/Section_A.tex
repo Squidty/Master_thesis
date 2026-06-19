@@ -15,7 +15,7 @@
 
 
 
-\begin{definition}
+\begin{definition}\label{def:f_div}
 Let $\varphi, \psi:\mathcal{M}\rightarrow\mathbb{C}$ be positive lineare functionals over a von
 Neumann algebra $\mathcal{M}$ such that
 $\varphi \ll \gg \psi$ \gext{was das nochmal genau???}
@@ -27,7 +27,7 @@ The \textit{f-divergence} of $\varphi$ and $\psi$ is given by
     D_f(\varphi\mid \psi) &= \int_{1}^{\infty}
     f''(\gamma) E_\gamma(\varphi\mid \psi)
     + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi\mid\varphi) d\gamma\\
-    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi)
+    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi) d\gamma
     + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\varphi) d\gamma.
 \end{split}
 \end{equation}
@@ -72,15 +72,21 @@ We want to generalize them for states over arbitrary von Neumann algebras
 
 We start with inequalitie (84) from \cite{Sason_2016}.
 
+\begin{question}
+    Wann ist $D_f(\varphi\mid\psi)$ endlich?
+    Evtl wenn $\psi$ normal ist?
+\end{question}
+
 \begin{proposition}
     Let $f,g: (0,\infty)\rightarrow\mathbb{R}$ convex functions
     with $f(1) = g(1)$, $f'(1) = g'(1)$
     and $f(t)\leq g(t)$ for all $t\in(0,\infty)$.
-    Then, the following inequalitie holds:
+    Also let $\varphi, \psi$ be positive lineare functionals over a
+    von Neumann algebra such that $\varphi\ll\gg\psi$
+    \gext{($D_f(\varphi\mid\psi)), D_g(\varphi\mid\psi)$ are finite}
     \begin{equation}
         D_f(\varphi\mid \psi) \leq D_g(\varphi\mid\psi).
     \end{equation}
-    $\varphi$ and $\psi$ are states over an arbitrary von Neumann algebra.
 \end{proposition}
 
 \begin{remark}
@@ -91,4 +97,24 @@ We start with inequalitie (84) from \cite{Sason_2016}.
 \begin{remark}
     By assumption $f'(1) = g'(1)$ indirectly require, that $f$ and $g$ are
     differentiable at $x=1$.
+    Therefore, we cannot put in e.g. the \textit{total variational distance}
+    (see \cite{Sason_2016} eq. (55)).
 \end{remark}
+
+
+\begin{proof}
+    We begin by reformulating the f-divergence given in \cref{def:f_div}.
+\begin{equation}
+\begin{split}
+        D_f(\varphi\mid \psi) &= \int_{1}^{\infty}
+    f''(\gamma) E_\gamma(\varphi\mid \psi)
+    + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi\mid\varphi) d\gamma\\
+    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi) d\gamma
+    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\varphi) d\gamma\\
+    &\oben{=} \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi) d\gamma
+    +\int_{0}^{1}\gamma f''(\gamma)(\frac{1}{\gamma} E_\gamma(\varphi\mid\psi)
+    + \psi(\mathbb{1}) - \frac{1}{\gamma}\varphi(\mathbb{1}))
+\end{split}
+\end{equation}
+(a) state exchange, 
+\end{proof}
