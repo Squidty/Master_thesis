@@ -24,21 +24,21 @@ $f(1) = 0$ \gext{(brauche ich das hier???)}.
 The \textit{f-divergence} of $\varphi$ and $\psi$ is given by
 \begin{equation}
 \begin{split}
-    D_f(\varphi\mid \psi) &= \int_{1}^{\infty}
-    f''(\gamma) E_\gamma(\varphi\mid \psi)
-    + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi\mid\varphi) d\gamma\\
-    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi) d\gamma
-    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\varphi) d\gamma.
+    D_f(\varphi| \psi) &= \int_{1}^{\infty}
+    f''(\gamma) E_\gamma(\varphi| \psi)
+    + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi|\varphi) d\gamma\\
+    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi|\psi) d\gamma
+    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi|\varphi) d\gamma.
 \end{split}
 \end{equation}
 \end{definition}
 
 \begin{definition}
     Let $\varphi$ and $\psi$ be as above. (sicher? oder doch Zustände?)
-    The hockeystick divergence $E_\gamma(\varphi\mid\psi)$ is defined as
+    The hockeystick divergence $E_\gamma(\varphi|\psi)$ is defined as
     follows:
     \begin{equation}
-        E_\gamma(\varphi\mid\psi) := (\psi - \gamma\varphi)_+(\mathbb{1})
+        E_\gamma(\varphi|\psi) := (\psi - \gamma\varphi)_+(\mathbb{1})
     \end{equation}
 \end{definition}
 
@@ -49,7 +49,7 @@ Some facts about the hockeystick divergence.
     algebra, and $p_1, p_2$ are 
     \gext{(pos. lin. functionals or states?)}
     \begin{equation}
-        \lim_{t\rightarrow\infty} E_t(\varphi_1\mid \varphi_2) = \varphi_1(p_2^\perp).
+        \lim_{t\rightarrow\infty} E_t(\varphi_1| \varphi_2) = \varphi_1(p_2^\perp).
     \end{equation}
     \begin{equation}
         \lim_{t\rightarrow\infty} E_t(\varphi_1, \varphi_2) = 0\quad
@@ -73,7 +73,7 @@ We want to generalize them for states over arbitrary von Neumann algebras
 We start with inequalitie (84) from \cite{Sason_2016}.
 
 \begin{question}
-    Wann ist $D_f(\varphi\mid\psi)$ endlich?
+    Wann ist $D_f(\varphi|\psi)$ endlich?
     Evtl wenn $\psi$ normal ist?
 \end{question}
 
@@ -83,9 +83,9 @@ We start with inequalitie (84) from \cite{Sason_2016}.
     and $f(t)\leq g(t)$ for all $t\in(0,\infty)$.
     Also let $\varphi, \psi$ be positive lineare functionals over a
     von Neumann algebra such that $\varphi\ll\gg\psi$
-    \gext{($D_f(\varphi\mid\psi)), D_g(\varphi\mid\psi)$ are finite}
+    \gext{($D_f(\varphi|\psi)), D_g(\varphi|\psi)$ are finite}
     \begin{equation}
-        D_f(\varphi\mid \psi) \leq D_g(\varphi\mid\psi).
+        D_f(\varphi| \psi) \leq D_g(\varphi|\psi).
     \end{equation}
 \end{proposition}
 
@@ -106,14 +106,40 @@ We start with inequalitie (84) from \cite{Sason_2016}.
     We begin by reformulating the f-divergence given in \cref{def:f_div}.
 \begin{equation}
 \begin{split}
-        D_f(\varphi\mid \psi) &= \int_{1}^{\infty}
-    f''(\gamma) E_\gamma(\varphi\mid \psi)
-    + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi\mid\varphi) d\gamma\\
-    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi) d\gamma
-    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi\mid\varphi) d\gamma\\
-    &\oben{=} \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi\mid\psi) d\gamma
-    +\int_{0}^{1}\gamma f''(\gamma)(\frac{1}{\gamma} E_\gamma(\varphi\mid\psi)
-    + \psi(\mathbb{1}) - \frac{1}{\gamma}\varphi(\mathbb{1}))
+        D_f(\varphi| \psi) &= \int_{1}^{\infty}
+    f''(\gamma) E_\gamma(\varphi| \psi)
+    + \gamma^{-3} f''(\gamma^{-1}) E_\gamma(\psi|\varphi) d\gamma\\
+    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi|\psi) d\gamma
+    + \int_{0}^{1} \gamma f''(\gamma) E_{\frac{1}{\gamma}}(\psi|\varphi) d\gamma\\
+    &\oben{=} \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi|\psi) d\gamma
+    +\int_{0}^{1}\gamma f''(\gamma)(\frac{1}{\gamma} E_\gamma(\varphi|\psi)
+    + \psi(\mathbb{1}) - \frac{1}{\gamma}\varphi(\mathbb{1}))d\gamma\\
+    &= \int_{1}^{\infty} f''(\gamma) E_\gamma(\varphi|\psi) d\gamma
+    +\int_{0}^{1} f''(\gamma) E_\gamma(\varphi|\psi)d\gamma
+    +\int_{0}^{1} f''(\gamma) (\gamma \psi(\mathbb{1}) - \varphi(\mathbb{1}))d\gamma\\
+    &= \int_{0}^{\infty} f''(\gamma) E_\gamma(\varphi|\psi)d\gamma
+    + \psi(\mathbb{1}) \int_{0}^{1} \gamma f''(\gamma) d\gamma
+    - \varphi(\mathbb{1}) \int_{0}^{1} f''(\gamma) d\gamma\\
+    &\oben{=} [f'(\gamma) E_\gamma(\varphi|\psi)]_0^\infty
+    - \int_{0}^{\infty} f'(\gamma) E_\gamma'(\varphi|\psi)d\gamma
+    + \psi(\mathbb{1}) \left([\gamma f'(\gamma)]_0^1
+    -\int_{0}^{1} f'(\gamma) d\gamma\right)-\varphi(\mathbb{1}) [f'(\gamma)]_0^1\\
+    &\oben{=} [f'(\gamma) E_\gamma(\varphi|\psi)]_0^\infty
+    -\left( [f(\gamma) E_\gamma'(\varphi|\psi)]_0^\infty
+    -\int_{0}^{\infty} f(\gamma) E_\gamma''(\varphi|\psi) d\gamma
+    \right)\\
+    &\quad +\psi(\mathbb{1}) \left( [\gamma f'(\gamma)]_0^1
+    -[f(\gamma)]_0^1 \right)
+    -\varphi(\mathbb{1}) [f'(\gamma)]_0^1\\
+    &= \lim_{\gamma\rightarrow\infty} f'(\gamma) E_\gamma(\varphi|\psi)
+    -\lim_{\gamma\rightarrow 0} f'(\gamma) E_\gamma(\varphi|\psi)
+    -\left(\lim_{\gamma\rightarrow\infty} f(\gamma) E_\gamma'(\varphi|\psi)
+    -\lim_{\gamma\rightarrow 0} f(\gamma) E_\gamma'(\varphi|\psi)\right)\\
+    &\quad +\int_{0}^{\infty} f(\gamma) E_\gamma''(\varphi|\psi)d\gamma
+    +\psi(\mathbb{1})
+    \left( 1 f'(1) - \lim_{\gamma\rightarrow 0} \gamma f'(\gamma)
+    - f(1) + \lim_{\gamma\rightarrow 0}f(\gamma)\right)\\
+    &\quad-\varphi(\mathbb{1})\left( f'(1) - \lim_{\gamma\rightarrow 0} f'(\gamma)\right)
 \end{split}
 \end{equation}
 (a) state exchange, 
