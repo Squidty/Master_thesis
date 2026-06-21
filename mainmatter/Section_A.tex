@@ -137,10 +137,40 @@ We start with inequalitie (84) from \cite{Sason_2016}.
     -\lim_{\gamma\rightarrow 0} f(\gamma) E_\gamma'(\varphi|\psi)\right)\\
     &\quad +\int_{0}^{\infty} f(\gamma) E_\gamma''(\varphi|\psi)d\gamma
     +\psi(\mathbb{1})
-    \left( 1 f'(1) - \lim_{\gamma\rightarrow 0} \gamma f'(\gamma)
+    \left(f'(1) - \lim_{\gamma\rightarrow 0} \gamma f'(\gamma)
     - f(1) + \lim_{\gamma\rightarrow 0}f(\gamma)\right)\\
-    &\quad-\varphi(\mathbb{1})\left( f'(1) - \lim_{\gamma\rightarrow 0} f'(\gamma)\right)
+    &\quad-\varphi(\mathbb{1})\left( f'(1) - \lim_{\gamma\rightarrow 0} f'(\gamma)\right)\\
+    &=\lim_{\gamma\rightarrow\infty}
+    \left( f'(\gamma) E_\gamma(\varphi|\psi) - f(\gamma) E_\gamma'(\varphi|\psi)\right)
+    +\int_{0}^{\infty} f(\gamma) E_\gamma''(\varphi|\psi)d\gamma\\
+    &\quad +\lim_{\gamma\rightarrow 0} f(\gamma) (E_\gamma'(\varphi|\psi) + \psi(\mathbb{1}))
+    + \lim_{\gamma\rightarrow 0} f'(\gamma) (\varphi(\mathbb{1})
+    - \gamma\psi(\mathbb{1}) -E_\gamma(\varphi|\psi))\\
+    &\quad + \underbrace{\psi(\mathbb{1}) f'(1) - \psi(\mathbb{1}) f(1)
+    - \varphi(\mathbb{1}) f'(1)}_{=:K}
 \end{split}
 \end{equation}
-(a) state exchange, 
+(a) state exchange, (b), (c) partial integration
+K is a constant here, fällt weg bei $D_g -D_f$, da $f(1) = g(1)$ und
+$f'(1) = g'(1)$.
+\bigskip
+
+Next we want to show under which conditions $D_g(\varphi|\psi)\leq D_f(\varphi|\psi)$
+holds.
+\begin{equation}
+\begin{split}
+    D_g(\varphi|\psi) - D_f(\varphi|\psi)
+    &=\int_{0}^{\infty} \underbrace{(g(\gamma)-f(\gamma))}_{\geq 0} d\gamma
+    \underbrace{E_\gamma''(\varphi|\psi)}_{\geq 0}
+    + \lim_{\gamma\rightarrow 0} \underbrace{(g(\gamma) - f(\gamma))}_{\geq 0}
+    \underbrace{(E_\gamma'(\varphi|\psi) + \psi(\mathbb{1}))}_{\geq 0\: (a)}\\
+    &\quad +\lim_{\gamma\rightarrow \infty} ((g'(\gamma)-f'(\gamma)) E_\gamma(\varphi|\psi)
+    - (g(\gamma) - f(\gamma)) E_\gamma'(\varphi|\psi))\\
+    &\quad +\lim_{\gamma\rightarrow 0} (g'(\gamma) - f'(\gamma))
+    \underbrace{(\varphi(\mathbb{1})
+    - \gamma\psi(\mathbb{1}) -E_\gamma(\varphi|\psi))}_{\leq 0\: (b)}
+\end{split}
+\end{equation}
+(a) follow from lipschitz-continuity of $E_\gamma$;
+(b) follows from strict positivity of $E_\gamma$.
 \end{proof}
