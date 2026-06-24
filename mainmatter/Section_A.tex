@@ -14,6 +14,31 @@
 \end{question}
 
 
+\begin{definition}
+    Let $\varphi, \psi:\mathcal{M}\rightarrow \mathbb{C}$ positive linear
+    functionals.
+    We call $\varphi$ absolutely continuous with respect to $\psi$ and
+    write $\varphi \ll \psi$ if:
+    \begin{equation}
+        \psi(A^*A) = 0\quad\Longrightarrow\quad \psi(A^*A)\quad\forall A\in\mathcal{M}.
+    \end{equation}
+    We call $\varphi$ and $\psi$ mutually absolutely continuous if:
+    \begin{equation}
+        \psi(A^*A) = 0\quad\Longleftrightarrow\quad \varphi(A^*A) = 0.
+    \end{equation}
+\end{definition}
+
+For normal linear functionals we get additional information from
+mutual continuity.
+Therefore we first revise some properties.
+
+\begin{theorem}
+    Let $\mathcal{M}$ be a von Neumann algebra and $\omega\in S(\mathcal{M}$).
+    Then, $\omega$ is a normal state if and only if there exists a density
+    operator $\rho\in ???$ such that
+    $\omega(A) = Tr(\rho A)$ for all $A\in\mathcal{M}$.
+\end{theorem}
+
 
 \begin{definition}\label{def:f_div}
 Let $\varphi, \psi:\mathcal{M}\rightarrow\mathbb{C}$ be positive lineare functionals over a von
@@ -153,6 +178,9 @@ We start with inequalitie (84) from \cite{Sason_2016}.
 (a) state exchange, (b), (c) partial integration
 K is a constant here, fällt weg bei $D_g -D_f$, da $f(1) = g(1)$ und
 $f'(1) = g'(1)$.
+\smallskip
+
+(a)
 \bigskip
 
 Next we want to show under which conditions $D_g(\varphi|\psi)\leq D_f(\varphi|\psi)$
@@ -160,8 +188,8 @@ holds.
 \begin{equation}
 \begin{split}
     D_g(\varphi|\psi) - D_f(\varphi|\psi)
-    &=\int_{0}^{\infty} \underbrace{(g(\gamma)-f(\gamma))}_{\geq 0} d\gamma
-    \underbrace{E_\gamma''(\varphi|\psi)}_{\geq 0}
+    &=\int_{0}^{\infty} \underbrace{(g(\gamma)-f(\gamma))}_{\geq 0}
+    \underbrace{E_\gamma''(\varphi|\psi)}_{\geq 0} d\gamma
     + \lim_{\gamma\rightarrow 0} \underbrace{(g(\gamma) - f(\gamma))}_{\geq 0}
     \underbrace{(E_\gamma'(\varphi|\psi) + \psi(\mathbb{1}))}_{\geq 0\: (a)}\\
     &\quad +\lim_{\gamma\rightarrow \infty} ((g'(\gamma)-f'(\gamma)) E_\gamma(\varphi|\psi)
@@ -173,4 +201,7 @@ holds.
 \end{equation}
 (a) follow from lipschitz-continuity of $E_\gamma$;
 (b) follows from strict positivity of $E_\gamma$.
+\smallskip
+
+
 \end{proof}
