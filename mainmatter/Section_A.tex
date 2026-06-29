@@ -22,7 +22,8 @@
     \begin{equation}
         \psi(A^*A) = 0\quad\Longrightarrow\quad \psi(A^*A)\quad\forall A\in\mathcal{M}.
     \end{equation}
-    We call $\varphi$ and $\psi$ mutually absolutely continuous if:
+    We call $\varphi$ and $\psi$ mutually absolutely continuous and write 
+    $\varphi \ll \gg \psi$ if:
     \begin{equation}
         \psi(A^*A) = 0\quad\Longleftrightarrow\quad \varphi(A^*A) = 0.
     \end{equation}
@@ -43,7 +44,7 @@ Therefore we first revise some properties.
 \begin{definition}\label{def:f_div}
 Let $\varphi, \psi:\mathcal{M}\rightarrow\mathbb{C}$ be positive lineare functionals over a von
 Neumann algebra $\mathcal{M}$ such that
-$\varphi \ll \gg \psi$ \gext{was das nochmal genau???}
+$\varphi \ll \gg \psi$
 and $f:(0,\infty)\rightarrow \mathbb{R}$ be a convex function with
 $f(1) = 0$ \gext{(brauche ich das hier???)}.
 The \textit{f-divergence} of $\varphi$ and $\psi$ is given by
@@ -83,6 +84,30 @@ Some facts about the hockeystick divergence.
 \end{proposition}
 
 
+\subsection{max-relative entropy}
+
+\begin{definition}
+    Let $\varphi, \psi:\mathcal{M}\rightarrow \mathbb{C}$
+    be two positive linear functionals.
+    The \textit{max-relative entropy} of $\varphi$ with respect to $\psi$
+    is defined as:
+    \begin{equation}
+        D_{\max}(\varphi|\psi) := \inf\{\lambda\in\mathbb{R}\mid \varphi\leq e^\lambda \psi\}.
+    \end{equation}
+\end{definition}
+
+\begin{remark}
+    If $\varphi$ and $\psi$ are states with $\varphi\leq \psi$, then
+    $\varphi = \psi$ holds.
+    Therefore, we define the positive linear functional $\omega = \psi-\varphi$.
+    By the normalized property of $\varphi$ and $\psi$ we get:
+    \begin{equation}
+        \omega(\mathbb{1}) = \psi(\mathbb{1}) - \varphi(\mathbb{1}) = 1-1 = 0.
+    \end{equation}
+    Hence, $\lVert \omega \rVert = \omega(\mathbb{1}) = 0$.
+    By the positive definiteness of the norm we get that $\omega$ is the
+    zero functional, thus $\varphi = \psi$.
+\end{remark}
 
 \subsection{First Inequalitie}
 
