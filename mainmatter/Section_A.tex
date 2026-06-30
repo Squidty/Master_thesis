@@ -33,13 +33,27 @@ For normal linear functionals we get additional information from
 mutual continuity.
 Therefore we first revise some properties.
 
+\gext{Wir wollen später annehmen, dass zwei positive lineare Funktionale
+absolut stetig zueinander
+sind $\varphi\ll\gg\psi$, bzw. mindestens ein Funktional absolut stetig
+bzgl eines anderen ist $\varphi\ll\psi$.
+Um mehr information aus dieser Eigenschaft ziehen zu können fordern wir, dass
+die Funktionale im Folgenden normal sind. Dadurch existiert zu jedem positiv
+normalen linearen Funktional ein eindeutiger Dichteoperator.}
+
 \begin{theorem}
     Let $\mathcal{M}$ be a von Neumann algebra and $\omega\in S(\mathcal{M}$).
     Then, $\omega$ is a normal state if and only if there exists a density
-    operator $\rho\in ???$ such that
+    operator $\rho\in \mathcal{M}$ such that
     $\omega(A) = Tr(\rho A)$ for all $A\in\mathcal{M}$.
 \end{theorem}
 
+\begin{definition}
+    Let $\mathcal{M}$ be an arbitrary von Neumann algebra.
+    A density matrix/operator $\rho\in\mathcal{M}$ is a positive
+    selfadjoint 
+
+\end{definition}
 
 \begin{definition}\label{def:f_div}
 Let $\varphi, \psi:\mathcal{M}\rightarrow\mathbb{C}$ be positive lineare functionals over a von
@@ -95,6 +109,11 @@ Some facts about the hockeystick divergence.
         D_{\max}(\varphi|\psi) := \inf\{\lambda\in\mathbb{R}\mid \varphi\leq e^\lambda \psi\}.
     \end{equation}
 \end{definition}
+
+\begin{remark}
+    In mathematical physics $e^\lambda$ is preferred while in quantum
+    information theory $2^\lambda$ is used because of bits (information unit).
+\end{remark}
 
 \begin{remark}
     If $\varphi$ and $\psi$ are states with $\varphi\leq \psi$, then
